@@ -1,0 +1,60 @@
+
+R version 3.1.1 (2014-07-10) -- "Sock it to Me"
+Copyright (C) 2014 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(hexbin)
+> 
+> if(FALSE) { ## the following is still quite a bit from working/useful :
++ 
++ ## what should that do? set a palette?
++ rgb <- matrix(c(
++         15,15,15,
++ 
++         0, 0, 0,
++         1, 9,15,
++         9,15, 9,
++        15, 9, 9,
++ 
++         0, 0, 0,
++         0, 0, 0,
++         0, 0, 0,
++         0, 0, 0,
++         0, 0, 0,
++         0, 0, 0,
++ 
++         9, 9, 9,
++         0, 2, 7,
++         0, 7, 1,
++         8, 1, 1,
++ 
++        15, 2, 2,
++        11, 1, 1,
++         8, 1, 1,
++         5, 1, 1,
++         5, 1, 1,
++        15,15,15), ncol = 3, byrow = TRUE)
++ 
++ ##ps.options(rasters=600,color=rgb/15,background=2)
++ ##ps.options(color=rgb/15,background=2)
++ postscript("large.ps",width = 10,height = 7.5)
++ 
++ plot.hexbin(ans.25mil, style = "nest", lcex = .9)
++ 
++ }## FALSE, i.e. nothing done
+> 
+> proc.time()
+   user  system elapsed 
+  0.240   0.032   0.265 

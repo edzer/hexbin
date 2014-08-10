@@ -141,7 +141,6 @@ grid.hexagons(dat, style = c("colorscale", "centroids", "lattice",
 }
 
 \examples{
-library("grid")
 set.seed(506)
 x <- rnorm(10000)
 y <- rnorm(10000)
@@ -167,6 +166,7 @@ P <- plot(hb2, type="n", main = "Bivariate mixture (10000)")# asp=1
 pushHexport(P$plot.vp)
 grid.hexagons(hb2, style= "lattice", border = gray(.1), pen = gray(.6),
               minarea = .1, maxarea = 1.5)
+library("grid")
 popViewport()
 
 ## How to treat 'singletons' specially:

@@ -57,7 +57,6 @@ erode.hexbin(hbin, cdfcut = 0.5)
 }
 
 \examples{
-library("grid")
 set.seed(153)
 x <- rnorm(10000)
 y <- rnorm(10000)
@@ -79,6 +78,7 @@ plot(bin,style= "lat", minarea=1, maxarea=1,
 %% FIXME:  {compare with example in "hexbin0"}
 grid.hexagons(erodebin,style= "lat", minarea=1, maxarea=1,pen="green")
 xy <- hcell2xy(erodebin)
+library("grid")
 grid.text(lab = as.character(erodebin@erode), xy$x, xy$y,
           gp = gpar(col="white", cex=0.65))
 
