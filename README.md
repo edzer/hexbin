@@ -1,4 +1,4 @@
 hexbin
 ======
 
-An R Package with Hexagonal Binning Routines and plotting methods
+An R Package with binning and plotting functions for hexagonal bins.

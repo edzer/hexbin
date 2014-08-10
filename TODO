@@ -1,0 +1,31 @@
+o   The new 3D plots -- should rather make the new functions "internal"
+    and choosable with *arguments* from given functions !
+
+o   hexbin  *class*  {as mentioned by  man/hexbin.Rd }		-- done
+
+o   find the references (on paper) and read !
+	     --> "References" in ./Biocore-notes
+
+    ftp://www.galaxy.gmu.edu/pub/faculty/dcarr/eda/bin2d/
+    ftp://www.galaxy.gmu.edu/pub/faculty/dcarr/software/bin2d.rev/
+
+
+o   example(hmatplot)  is still doing many pages instead of one
+
+
+------------
+March 5, 2005
+o   Implement conversions between different hexagon coordinate systems
+
+o   Smoothing on a hexagonal basis using tensor products
+    + smoothing histograms
+    + smoothing the intensity of a Poisson process
+
+o   Family of hex apply functions
+
+o   Hbin list class and constructors
+
+---
+
+o   Use standard convertColor() function more and
+    and try to get rid of dependency on 'colorspace'
