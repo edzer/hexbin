@@ -345,7 +345,7 @@ transferin, a measure of iron binding against hemoglobin for all
 \begin{figure}[H]
   \centering
 
-<< hbox, fig = TRUE, width = 6, height = 4, echo = FALSE >>=
+<< echo = FALSE >>=
 data(NHANES)
 #grid.newpage()
 mar <- unit(0.1 + c(5,4,4,2),"lines")
@@ -354,6 +354,9 @@ mai <- as.numeric(convertUnit(mar, "inches"))
 #          convertHeight(unit(1,"npc"), "inches"))
 vpin <- c(unit(6,"inches"),unit(4, "inches"))
 shape <- optShape(height = vpin[2], width = vpin[1], mar = mai)
+@
+
+<< hbox, fig = TRUE, width = 6, height = 4, echo = FALSE >>=
 hb <- hexbin(NHANES$Transferin, NHANES$Hemoglobin, shape = shape)
 hbhp <- hboxplot(erode(hb,cdfcut = .05),unzoom = 1.3)
 pushHexport(hbhp,clip = 'on')
@@ -395,7 +398,7 @@ hbF <- hexbin(NHANES$Transferin[NHANES$Sex == "F"],
 hbM <- hexbin(NHANES$Transferin[NHANES$Sex == "M"],
               NHANES$Hemoglobin[NHANES$Sex == "M"],
               xbnds = xbnds, ybnds = ybnds, shape = shape)
-plot.new()
+#plot.new()
 hdiffplot(erode(hbF,cdfcut = .25),erode(hbM,cdfcut = .25),unzoom = 1.3)
 @
 \caption{A difference plot of transferin vs hemoglobin for males and females.}

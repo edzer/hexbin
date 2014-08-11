@@ -169,7 +169,7 @@ hdiffplot <-
         grid.text(xlab, y = unit(-2, "lines"), gp = gpar(fontsize = 16))
     if(nchar(ylab) > 0)
         grid.text(ylab, x = unit(-2, "lines"), gp = gpar(fontsize = 16), rot = 90)
-    if(nchar(main) > 0)
+    if(sum(nchar(main)) > 0)
         grid.text(main, y = unit(1, "npc") + unit(1.5, "lines"),
                   gp = gpar(fontsize = 18))
 
