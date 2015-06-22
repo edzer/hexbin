@@ -2,3 +2,5 @@ language: r
 sudo: required
 
 warnings_are_errors: true
+
+bioc_packages: marray, affy, Biobase
