@@ -7,12 +7,12 @@
 # 
 # checking dependencies in R code ... NOTE
 # Unexported objects imported by ':::' calls:
-# ‘lattice:::cond.orders’ ‘lattice:::construct.scales’
-# ‘lattice:::cupdate’ ‘lattice:::limits.and.aspect’
-# ‘lattice:::trellis.skeleton’
-# See the note in ?`:::` about the use of this operator.
-# See the information on DESCRIPTION files in the chapter ‘Creating R
-# packages’ of the ‘Writing R Extensions’ manual.
+# lattice:::cond.orders lattice:::construct.scales
+# lattice:::cupdate lattice:::limits.and.aspect
+# lattice:::trellis.skeleton
+# See the note in ?::: about the use of this operator.
+# See the information on DESCRIPTION files in the chapter Creating R
+# packages of the Writing R Extensions manual.
 
 # the files in lattice carry the following copyright notice:
 
