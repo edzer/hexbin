@@ -13,13 +13,17 @@ plotMAhex <- function (MA, array = 1, xlab = "A", ylab = "M",
                        xaxt = c("s", "n"), yaxt = c("s", "n"),
                        verbose = getOption("verbose"))
 {
+  if (!requireNamespace("marray", quietly = TRUE))
+	stop("cannot process objects without package marray")
+  if (!requireNamespace("limma", quietly = TRUE))
+	stop("cannot process objects without package limma")
   if(is.null(main))main <- ""
   switch(class(MA),marrayRaw={
-        x <- maA(MA[,array])
-        y <- maM(MA[,array])
-        w <- maW(MA[,array])
+        x <- marray::maA(MA[,array])
+        y <- marray::maM(MA[,array])
+        w <- marray::maW(MA[,array])
       },RGList = {
-        MA <- MA.RG(MA[, array])
+        MA <- limma::MA.RG(MA[, array])
         array <- 1
         x <- MA$A
         y <- MA$M
@@ -58,33 +62,34 @@ plotMAhex <- function (MA, array = 1, xlab = "A", ylab = "M",
         y <- MA[, array] - x
         w <- NULL
     }, ExpressionSet = {
-        if(!require(Biobase))
+		if (!requireNamespace("Biobase", quietly = TRUE))
           stop("cannot process ExpressionSet objects without package Biobase")
-        narrays <- ncol(exprs(MA))
+        narrays <- ncol(Biobase::exprs(MA))
         if (narrays < 2)
             stop("Need at least two arrays")
         if (narrays > 5)
-            x <- apply(exprs(MA), 1, median, na.rm = TRUE)
+            x <- apply(Biobase::exprs(MA), 1, median, na.rm = TRUE)
         else
-			x <- rowMeans(exprs(MA), na.rm = TRUE)
-        y <- exprs(MA)[, array] - x
+			x <- rowMeans(Biobase::exprs(MA), na.rm = TRUE)
+        y <- Biobase::exprs(MA)[, array] - x
         w <- NULL
         if (missing(main))
-            main <- colnames(exprs(MA))[array]
+            main <- colnames(Biobase::exprs(MA))[array]
     }, AffyBatch = {
-        if(!require(affy)| !require(Biobase))
+		if (!requireNamespace("Biobase", quietly = TRUE) ||
+			!requireNamespace("affy", quietly = TRUE))
           stop("cannot process AffyBatch objects without package Biobase and affy")
-        narrays <- ncol(exprs(MA))
+        narrays <- ncol(Biobase::exprs(MA))
         if (narrays < 2)
             stop("Need at least two arrays")
         if (narrays > 5)
-            x <- apply(log2(exprs(MA)), 1, median, na.rm = TRUE)
+            x <- apply(log2(Biobase::exprs(MA)), 1, median, na.rm = TRUE)
         else
-			x <- rowMeans(log2(exprs(MA)), na.rm = TRUE)
-        y <- log2(exprs(MA)[, array]) - x
+			x <- rowMeans(log2(Biobase::exprs(MA)), na.rm = TRUE)
+        y <- log2(Biobase::exprs(MA)[, array]) - x
         w <- NULL
         if (missing(main))
-            main <- colnames(exprs(MA))[array]
+            main <- colnames(Biobase::exprs(MA))[array]
     }, stop("MA is invalid object"))
     if (!is.null(w) && !zero.weights) {
         i <- is.na(w) | (w <= 0)

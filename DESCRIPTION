@@ -1,6 +1,6 @@
 Package: hexbin
 Version: 1.27.1
-Date: 2014-08-10
+Date: 2015-07-07
 Title: Hexagonal Binning Routines
 Author: Dan Carr <dcarr@voxel.galaxy.gmu.edu>, ported by Nicholas
         Lewin-Koh and Martin Maechler <maechler@stat.math.ethz.ch>,
@@ -9,7 +9,7 @@ Author: Dan Carr <dcarr@voxel.galaxy.gmu.edu>, ported by Nicholas
 Maintainer: Edzer Pebesma <edzer.pebesma@uni-muenster.de>
 Depends: R (>= 2.0.1), methods
 Imports: lattice, grid, graphics, grDevices, stats, utils
-Suggests: marray, affy, Biobase
+Suggests: marray, affy, Biobase, limma
 Description: Binning and plotting functions for hexagonal bins. Now
         uses and relies on grid graphics and formal (S4) classes and
         methods.
