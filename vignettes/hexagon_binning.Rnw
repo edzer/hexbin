@@ -65,7 +65,7 @@ with squares our eyes are drawn to the horizontal and vertical lines
 of the grid. The following figure adapted from \cite[]{carretal}shows
 this effectively. 
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
 <<comphexsq, fig=TRUE, width=7, height=4, echo=FALSE>>=
 library("grid")
@@ -134,7 +134,7 @@ fc.sq$y <- sqrt(3)*fc.sq$y                 # stretch y by the sqrt(3)
 nr <- length(fc.sq$x)/2
 @
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
 << fig = TRUE,width = 4,height = 8,echo = FALSE >>=
 par(mfrow = c(3,1))
@@ -342,7 +342,7 @@ set NHANES. The data consist of 9575 persons and mesures various
 clinical factors. Here in Figure~\ref{hbox} we show the levels of
 transferin, a measure of iron binding against hemoglobin for all
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
 
 << echo = FALSE >>=
@@ -385,7 +385,7 @@ of the ability of blood to bind oxygen, vs the level of hemoglobin.
 Note that in the call to \texttt{hdiffplot} we erode the bins to
 calculate the bivariate medians, and only display the upper 75\% of
 the data.
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
 << hdiff, fig = TRUE, width = 6, height = 4, echo = TRUE >>=
 #grid.newpage()
