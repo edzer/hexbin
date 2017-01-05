@@ -199,7 +199,7 @@ hexlegendGrob(legend = 1.2,
   \code{"grob"} (grid object).
 
 }
-\author{ Deepayan Sarkar \email{deepayan@stat.wisc.edu}}
+\author{ Deepayan Sarkar \email{deepayan.sarkar@r-project.org}}
 \seealso{
   \code{\link{hexbin}}, \code{\link[lattice]{xyplot}}
 }
