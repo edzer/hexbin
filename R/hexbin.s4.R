@@ -240,7 +240,8 @@ gplot.hexbin <-
 
     ## ----- plotting starts ------------------------
     if (newpage) grid.newpage()
-    hv.ob <- hexViewport(x, offset = unit(legend,"inches"))
+    hv.ob <- hexViewport(x, xbnds=x@xbnds, ybnds=x@ybnds,
+                         offset = unit(legend,"inches"))
     pushViewport(hv.ob@hexVp.off)
     grid.rect()
     if(xaxt != "n") grid.xaxis()
@@ -257,7 +258,7 @@ gplot.hexbin <-
 		gp = gpar(fontsize = 18))
     if(type != "n") {
         if(clip == "on") {
-            popViewport()
+            upViewport()
             pushViewport(hv.ob@hexVp.on)
         }
         grid.hexagons(x, style = style, minarea = minarea, maxarea = maxarea,
@@ -267,7 +268,7 @@ gplot.hexbin <-
 		      colramp = colramp, verbose = verbose)
     }
 
-    popViewport()# plot
+    upViewport()# plot
     #popViewport()# fig
     ## ----- Legend ------------------------
     if(legend > 0) {
@@ -310,7 +311,7 @@ gplot.hexbin <-
                            trans = trans, inv = inv, colorcut = colorcut,
 			   density = density, border = border, pen = pen,
 			   colramp = colramp)
-	    popViewport()
+	    upViewport()
 	}
     }
 
