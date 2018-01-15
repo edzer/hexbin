@@ -57,8 +57,7 @@ hexbin <-
 	      ybnds = as.double(ybnds),
 	      dim = as.integer(c(imax, jmax)),
 	      n = as.integer(n),
-	      cID = if(IDs) integer(n) else as.integer(-1),
-	      PACKAGE = "hexbin")[-(1:2)]
+	      cID = if(IDs) integer(n) else as.integer(-1))[-(1:2)]
 
     ## cut off extraneous stuff
     if(!IDs) ans$cID <- NULL
@@ -173,8 +172,7 @@ erode.hexbin <- function(hbin, cdfcut = 0.5)
 		    ncell = integer(L),
 		    sides = integer(L),
 		    neib  = integer(6 * L),
-		    exist = logical(L + 1),
-		    PACKAGE = "hexbin") $ erode
+		    exist = logical(L + 1)) $ erode
     length(ans) <- n
     ehbin <- new("erodebin", hbin, cdfcut = cdfcut, eroded = good, erode = ans)
     #hbin@erode <- ans
