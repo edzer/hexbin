@@ -128,7 +128,7 @@ How does does the hexagon binning algorithm work?
 \end{enumerate}
 
 
-<< nearNeighbor, echo = FALSE, results = 'hide' >>=
+<< nearNeighbor, echo = FALSE, results = hide >>=
 x <- -2:2
 sq <- expand.grid(list(x = x, y = c(-1,0,1)))
 fc.sq   <- rbind(sq,sq+.5)                 # face centered squares
