@@ -1,7 +1,7 @@
 
-R Under development (unstable) (2013-01-29 r61780) -- "Unsuffered Consequences"
-Copyright (C) 2013 The R Foundation for Statistical Computing
-ISBN 3-900051-07-0
+R version 3.6.0 (2019-04-26) -- "Planting of a Tree"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -16,14 +16,14 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > library(hexbin)
-Loading required package: grid
-Loading required package: lattice
 > 
 > if(R.version$major != "1" || as.numeric(R.version$minor) >= 7)
 +     RNGversion("1.6")
-Warning message:
-In RNGkind("Marsaglia-Multicarry", "Buggy Kinderman-Ramage") :
+Warning messages:
+1: In RNGkind("Marsaglia-Multicarry", "Buggy Kinderman-Ramage", "Rounding") :
   buggy version of Kinderman-Ramage generator used
+2: In RNGkind("Marsaglia-Multicarry", "Buggy Kinderman-Ramage", "Rounding") :
+  non-uniform 'Rounding' sampler used
 > set.seed(213)
 > x1 <- rnorm(10000)
 > y1 <- rnorm(10000)
@@ -153,3 +153,6 @@ n = 10000  points in	nc = 545  hexagon cells in grid dimensions  40 by 35
 + hdiffplot(erodebin1,erodebin2, main = "erode.hexbin()d smoothed bins")
 + }# not yet
 > 
+> proc.time()
+   user  system elapsed 
+  0.340   0.015   0.347 

@@ -30,8 +30,7 @@ smooth.hexbin <- function(bin, wts = c(48, 4, 1))
                     nmax = as.integer(nmax),
                     sm   = as.integer(sm),
                     ncol = as.integer(ncol),
-                    wts  = as.integer(wts),
-                    PACKAGE = "hexbin")[c("cell","cnt","n")]
+                    wts  = as.integer(wts))[c("cell","cnt","n")]
     n <- ans$n
     length(ans$cell) <- length(ans$cnt) <- n
     bin@xbins <- xbins + 4

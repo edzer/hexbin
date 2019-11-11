@@ -443,7 +443,7 @@ bar of points curving below the line.
 
 << marray1, fig = TRUE, results = hide >>=
 ### Need to redo this part.
-library("marray")
+if (require("marray")) {
 data(swirl, package = "marray") ## use swirl dataset
 
 hb1 <- hexbin(maA(swirl[,1]), maM(swirl[,1]), xbins = 40)
@@ -467,6 +467,9 @@ hb <- plotMAhex(swirl[,1], newpage = FALSE,
 hexVP.abline(hb$plot.vp,h = 0,col = gray(.6))
 hexMA.loess(hb)
 popViewport()
+} else {
+	plot(1)
+}
 @
 
 
@@ -489,12 +492,16 @@ create a custom plotting function using \texttt{hexViewport} and grid.
 Adding to an existing plot requires the use of grid
 functions. For instance, in the following code,
 << addto,fig = TRUE,echo = TRUE >>=
-hplt <- plot(hb1,style = 'centroid',border = gray(.65))
+if (require("marray")) {
+hplt <- plot(hb1, style = 'centroid', border = gray(.65))
 pushHexport(hplt$plot.vp)
 ll.fit <- loess(hb1@ycm ~ hb1@xcm, weights = hb1@count, span = .4)
 pseq <- seq(hb1@xbnds[1]+1, hb1@xbnds[2]-1, length = 100)
 grid.lines(pseq, predict(ll.fit,pseq),
            gp = gpar(col = 2), default.units = "native")
+} else {
+	plot(1)
+}
 @
 we have to use \texttt{grid.lines()}, as opposed to \texttt{lines()}.
 
