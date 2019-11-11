@@ -1,4 +1,9 @@
-setOldClass("unit")
+if ("simpleUnit" %in% class(unit(1, "mm"))) {
+    setOldClass(c("unit", "unit_v2"))
+    setOldClass(c("simpleUnit", "unit", "unit_v2"))
+} else {
+    setOldClass("unit")
+}
 setOldClass("viewport")
 
 smartBnds <- function(hbin, eps=.05)
