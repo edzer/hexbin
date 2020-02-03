@@ -64,8 +64,6 @@ gplot.hexbin(x, style = "colorscale", legend = 1.2, lcex = 1,
   \item{clip}{either 'on' or 'off' are the allowed arguments, when on
     everything is clipped to the plotting region.}
   \item{verbose}{logical indicating if some diagnostic output should happen.}
-  \item{\dots}{all arguments of \code{gplot.hexbin} can also be used for
-    the S4 \code{\link{plot}} method.}
 }
 \details{
   This is the (S4) \code{\link{plot}} method for \code{\link{hexbin}} (and
@@ -79,6 +77,9 @@ gplot.hexbin(x, style = "colorscale", legend = 1.2, lcex = 1,
   The legend functionality is somewhat preliminary.  Later versions may
   include refinements and handle extreme cases (small and large) for
   cell size and counts.
+
+  All arguments of \code{gplot.hexbin} can also be used for the S4 
+  \code{\link{plot}} method.
 }
 \value{
   invisibly, a list with components
