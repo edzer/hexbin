@@ -241,7 +241,7 @@ hexVP.abline <- function(hvp, a = NULL, b = NULL, h = numeric(0),
     popViewport()
 }
 
-hexVP.loess <- function(hbin, hvp = NULL, span = 0.4, col = 'red', n = 200)
+hexVP.loess <- function(hbin, hvp = NULL, span = 0.4, col = 'red', n = 200, ...)
 {
     fit <- loess(hbin@ycm ~ hbin@xcm, weights = hbin@count, span = span)
     if(!is.null(hvp)) {
@@ -251,7 +251,7 @@ hexVP.loess <- function(hbin, hvp = NULL, span = 0.4, col = 'red', n = 200)
 #                   gp = gpar(col = col), default.units = 'native')
  		grid.lines(seq(hbin@xbnds[1], hbin@xbnds[2], length = n),
 				predict(fit,seq(hbin@xbnds[1], hbin@xbnds[2], length = n)),
-				gp = gpar(col = col), default.units = 'native')
+				gp = gpar(col = col, ...), default.units = 'native')
         popViewport()
     }
     invisible(fit)
