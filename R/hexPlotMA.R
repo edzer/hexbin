@@ -189,8 +189,8 @@ plotMAhex <- function (MA, array = 1, xlab = "A", ylab = "M",
     invisible(list(hbin = hbin, plot.vp = hp$plot.vp, legend.vp = hp$legend.vp))
 }
 
-hexMA.loess <- function(pMA, span = .4, col = 'red', n = 200)
+hexMA.loess <- function (pMA, span = 0.4, n = 200, ...) 
 {
-  fit <- hexVP.loess(pMA$hbin, pMA$plot.vp, span = span, col = col, n = n)
-  invisible(fit)
+    fit <- hexVP.loess(pMA$hbin, pMA$plot.vp, span = span, n = n, ...)
+    invisible(fit)
 }
