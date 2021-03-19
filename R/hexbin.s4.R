@@ -204,7 +204,8 @@ gplot.hexbin <-
 	     colramp = function(n) LinGray(n, beg = 90, end = 15),
 	     xlab = NULL, ylab = NULL, main = "", newpage = TRUE,
 	     type = c("p", "l", "n"), xaxt = c("s", "n"), yaxt = c("s", "n"),
-	     clip="on", verbose = getOption("verbose"))
+	     clip="on", verbose = getOption("verbose"),
+	     xlim = x@xbnds, ylim = x@ybnds)
 {
     if(!is(x,"hexbin"))
 	stop("first argument must be a hexbin object")
@@ -238,7 +239,7 @@ gplot.hexbin <-
 
     ## ----- plotting starts ------------------------
     if (newpage) grid.newpage()
-    hv.ob <- hexViewport(x, xbnds=x@xbnds, ybnds=x@ybnds,
+    hv.ob <- hexViewport(x, xbnds=xlim, ybnds=ylim,
                          offset = unit(legend,"inches"))
     pushViewport(hv.ob@hexVp.off)
     grid.rect()
