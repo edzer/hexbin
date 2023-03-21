@@ -44,7 +44,7 @@ hexbin <-
     c1 <- 2 * floor((xbins *shape)/sqrt(3) + 1.5001)
     imax <- trunc((jmax*c1 -1)/jmax + 1)
     lmax <- jmax * imax
-    ans <- .Fortran("hbin",
+    ans <- .Fortran(`hbin`,
 	      x = as.double(x),
 	      y = as.double(y),
 	      cell = integer(lmax),
@@ -162,7 +162,7 @@ erode.hexbin <- function(hbin, cdfcut = 0.5)
     n <- length(cell)
     bdim <- hbin@dimen
     L <- bdim[1] * bdim[2]
-    ans <- .Fortran("herode",
+    ans <- .Fortran(`herode`,
 		    cell  = as.integer(cell),
 		    cnt	  = as.integer(cnt),
 		    n	  = n,

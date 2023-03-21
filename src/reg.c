@@ -13,7 +13,7 @@ static const R_FortranMethodDef FortranEntries[] = {
 	{NULL, NULL, 0}
 };
 
-void R_init_myLib(DllInfo *info) {
+void R_init_hexbin(DllInfo *info) {
 	R_registerRoutines(info, NULL, NULL, FortranEntries, NULL);
 	R_useDynamicSymbols(info, FALSE);
 	R_forceSymbols(info, TRUE);

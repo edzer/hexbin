@@ -23,7 +23,7 @@ smooth.hexbin <- function(bin, wts = c(48, 4, 1))
     pad <- rep.int(0:0, nmax - n)
     cell <- c(nr * ncol + nc, pad)
     cnt <- c(cnt, pad)
-    ans <- .Fortran("hsm",
+    ans <- .Fortran(`hsm`,
                     cell = as.integer(cell),
                     cnt  = as.integer(cnt),
                     n    = n,

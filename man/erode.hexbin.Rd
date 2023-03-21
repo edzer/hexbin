@@ -40,7 +40,7 @@ erode.hexbin(hbin, cdfcut = 0.5)
   empty or have a count deficit on each erosion cycle.  The erode vector
   contain an erosion number for each cell.   The value of  erode is
 
-  6*erosion\_cycle\_ at\_ cell\_ removal - cell\_deficit\_at\_removal
+  6*erosion_cycle_at_cell_removal - cell_deficit_at_removal
 
   Cells with low values are eroded first.   The cell with the highest
   erosion number is a candidate bivariate median.  A few ties in erode
