@@ -32,7 +32,13 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: r-lib/actions/setup-tinytex@v2
-      - run: tlmgr --version
+        run: tlmgr --version
+        if: matrix.config.latex == 'true'
+
+      - name: Install additional LaTeX packages
+        run: |
+          tlmgr update --self
+          tlmgr install grfext.sty
         if: matrix.config.latex == 'true'
 
       - uses: r-lib/actions/setup-pandoc@v2
