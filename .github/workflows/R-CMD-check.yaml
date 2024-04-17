@@ -35,9 +35,7 @@ jobs:
         if: matrix.config.latex == true
 
       - name: Install additional LaTeX packages
-        run: |
-          tlmgr update --self
-          tlmgr install grfext.sty
+        run: tlmgr install grfext
         if: matrix.config.latex == true
 
       - uses: r-lib/actions/setup-pandoc@v2
