@@ -30,8 +30,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        steps:
 
       - uses: r-lib/actions/setup-tinytex@v2
+      - run: tlmgr --version
         if: matrix.config.latex == 'true'
 
       - uses: r-lib/actions/setup-pandoc@v2
