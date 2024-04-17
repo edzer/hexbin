@@ -30,7 +30,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        steps:
 
       - uses: r-lib/actions/setup-tinytex@v2
       - run: tlmgr --version
