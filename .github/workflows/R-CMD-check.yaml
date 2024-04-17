@@ -18,11 +18,11 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - {os: macos-latest,   r: 'release', latex: true}
+          - {os: macos-latest,   r: 'release'}
           - {os: windows-latest, r: 'release'}
-          - {os: ubuntu-latest,   r: 'devel', http-user-agent: 'release', latex: true }
-          - {os: ubuntu-latest,   r: 'release', latex: true}
-          - {os: ubuntu-latest,   r: 'oldrel-1', latex: true}
+          - {os: ubuntu-latest,   r: 'devel', http-user-agent: 'release'}
+          - {os: ubuntu-latest,   r: 'release'}
+          - {os: ubuntu-latest,   r: 'oldrel-1'}
 
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -32,11 +32,9 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: r-lib/actions/setup-tinytex@v2
-        if: matrix.config.latex == true
 
       - name: Install additional LaTeX packages
         run: tlmgr install grfext
-        if: matrix.config.latex == true
 
       - uses: r-lib/actions/setup-pandoc@v2
 
