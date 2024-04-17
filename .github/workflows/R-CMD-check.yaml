@@ -48,3 +48,6 @@ jobs:
         with:
           upload-snapshots: true
           build_args: 'c("--no-manual","--compact-vignettes=gs+qpdf")'
+
+      - uses: r-lib/actions/setup-tinytex@master
+        if: matrix.config.latex == 'true'
