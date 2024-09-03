@@ -1,11 +1,26 @@
 Package: hexbin
 Version: 1.28.4
 Title: Hexagonal Binning Routines
-Author: Dan Carr <dcarr@voxel.galaxy.gmu.edu>, ported by Nicholas
-        Lewin-Koh and Martin Maechler <maechler@stat.math.ethz.ch>,
-		contains copies of lattice functions written by Deepayan Sarkar 
-		<deepayan.sarkar@r-project.org>
-Maintainer: Edzer Pebesma <edzer.pebesma@uni-muenster.de>
+Authors@R: c(person(given = "Dan",
+                      family = "Carr",
+                      role = "aut",
+                      email = "dcarr@voxel.galaxy.gmu.edu"),
+               person(given = c("ported", "by", "Nicholas"),
+                      family = "Lewin-Koh",
+                      role = "aut"),
+               person(given = "Martin",
+                      family = "Maechler",
+                      role = "aut",
+                      email = "maechler@stat.math.ethz.ch"),
+               person(given = c("contains", "copies", "of", "lattice", "functions", "written", "by", "Deepayan"),
+                      family = "Sarkar",
+                      role = "aut",
+                      email = "deepayan.sarkar@r-project.org"),
+               person(given = "Edzer",
+                      family = "Pebesma",
+                      role = "cre",
+                      comment = c(ORCID = "0000-0001-8049-7069"),
+                      email = "edzer.pebesma@uni-muenster.de"))
 Depends: R (>= 2.0.1), methods
 Imports: lattice, grid, graphics, grDevices, stats, utils
 Suggests: marray, affy, Biobase, limma, knitr

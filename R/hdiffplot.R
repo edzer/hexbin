@@ -32,7 +32,7 @@ make.bnds <- function(binlst, xy.lst, xbnds = NULL, ybnds = NULL)
     list(xbnds = xbnds, ybnds = ybnds, nxbnds = nxbnds, nybnds = nybnds)
 }
 
-all.intersect <- function(binlist)
+.all.intersect <- function(binlist)
 {
     ## This will not work if all the grids are not the same
     ## Will have to rethink this if we move to non-aligned
@@ -187,7 +187,7 @@ hdiffplot <-
         bin1@hbins <- c(bin1@hbins[focus], bin1@hbins[-focus])
         bin1@Bnames <- c(bin1@Bnames[focus], bin1@Bnames[-focus])
     }
-    cell.stat <- all.intersect(bin1@hbins)
+    cell.stat <- .all.intersect(bin1@hbins)
     cell.stat.n <- apply(cell.stat, 1, sum)
     i.depth <- max(cell.stat.n)
 

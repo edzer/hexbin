@@ -255,7 +255,7 @@ panel.hexpose <-
     binL@hbins <- c(binL@hbins[hexpose.focus], binL@hbins[-hexpose.focus])
     binL@Bnames <- c(binL@Bnames[hexpose.focus], binL@Bnames[-hexpose.focus])
   }
-  cell.stat <- all.intersect(binL@hbins)
+  cell.stat <- .all.intersect(binL@hbins)
   cell.stat.n <- apply(cell.stat, 1, sum)
   i.depth <- max(cell.stat.n)
 
