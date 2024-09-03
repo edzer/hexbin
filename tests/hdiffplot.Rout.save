@@ -1,7 +1,7 @@
 
-R version 3.6.0 (2019-04-26) -- "Planting of a Tree"
-Copyright (C) 2019 The R Foundation for Statistical Computing
-Platform: x86_64-pc-linux-gnu (64-bit)
+R version 4.4.1 (2024-06-14) -- "Race for Your Life"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -24,6 +24,8 @@ Warning messages:
   buggy version of Kinderman-Ramage generator used
 2: In RNGkind("Marsaglia-Multicarry", "Buggy Kinderman-Ramage", "Rounding") :
   non-uniform 'Rounding' sampler used
+3: In RNGkind("Marsaglia-Multicarry", "Buggy Kinderman-Ramage", "Rounding") :
+  RNGkind: Marsaglia-Multicarry has poor statistical properties
 > set.seed(213)
 > x1 <- rnorm(10000)
 > y1 <- rnorm(10000)
@@ -155,4 +157,4 @@ n = 10000  points in	nc = 545  hexagon cells in grid dimensions  40 by 35
 > 
 > proc.time()
    user  system elapsed 
-  0.340   0.015   0.347 
+  0.486   1.388   0.369 

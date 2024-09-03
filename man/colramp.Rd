@@ -42,7 +42,6 @@ plinrain(n, beg=1, end=256)
   \emph{Color Theory and Modeling for Computer Graphics,
     Visualization, and Multimedia Applications}.
   Kluwer Academic Publishers, Boston/London/Dordrecht.
-  \url{http://www.cs.uml.edu/~haim/ColorCenter/}
 }
 \seealso{
   \code{\link[grDevices:palettes]{rainbow}},
