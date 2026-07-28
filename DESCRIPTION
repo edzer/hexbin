@@ -1,5 +1,5 @@
 Package: hexbin
-Version: 1.28.4
+Version: 1.28.6
 Title: Hexagonal Binning Routines
 Authors@R: c(person(given = "Dan",
                       family = "Carr",

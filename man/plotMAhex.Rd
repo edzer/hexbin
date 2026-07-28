@@ -113,8 +113,6 @@ plotMAhex(MA, array = 1, xlab = "A", ylab = "M",
     and M as the y coordinate.}
 }
 
-\references{See \url{http://www.statsci.org/micrarra/refs/maplots.html}}
-
 \author{Nicholas Lewin-Koh, adapted from code by Gordon Smyth}
 
 \seealso{\code{\link[limma:plotma]{plotMA}} from package \pkg{limma},
