@@ -36,8 +36,8 @@ C_______Binning loop________________________________________
 	do i=1,n
 	  sx = c1 * (x(i) - xmin)
           sy = c2 * (y(i) - ymin)
-	  j1 = sx+.5
-	  i1 = sy+.5
+	  j1 = int(sx + .5)
+	  i1 = int(sy + .5)
 	  dist1=(sx-j1)**2 + 3.*(sy-i1)**2
 
 	  if(dist1.lt.con1)then
@@ -45,8 +45,8 @@ C_______Binning loop________________________________________
 	  elseif(dist1.gt.con2)then
 	    L=int(sy)*iinc + int(sx)+lat
 	  else
-	    j2 = sx
-	    i2 = sy
+	    j2 = int(sx)
+	    i2 = int(sy)
 	    if( dist1.le.(sx-j2-.5)**2 + 3. * (sy - i2 -.5)**2) then
 	      L=i1*iinc+j1+1
             else
