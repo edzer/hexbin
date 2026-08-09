@@ -103,7 +103,7 @@ LinGray <- function(n,beg = 1,end = 92)
 	       c(245,245,245),
 	       c(252,252,252),
 	       c(255,255,255),
-	       c(255,255,255))[round(seq(beg,end,length = n)), ]
+	       c(255,255,255))[round(seq(beg,end,length = n)), , drop=FALSE]
 
     rgb(M[,1]/255,
 	M[,2]/255,
