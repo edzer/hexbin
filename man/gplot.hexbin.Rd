@@ -64,6 +64,7 @@ gplot.hexbin(x, style = "colorscale", legend = 1.2, lcex = 1,
   \item{clip}{either 'on' or 'off' are the allowed arguments, when on
     everything is clipped to the plotting region.}
   \item{verbose}{logical indicating if some diagnostic output should happen.}
+  \item{xlim, ylim}{numeric vectors of length 2, giving the x and y coordinates ranges.}
 }
 \details{
   This is the (S4) \code{\link{plot}} method for \code{\link{hexbin}} (and
